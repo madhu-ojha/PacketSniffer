@@ -1,8 +1,11 @@
 import socket
 import struct
 
-# unpacking ethernet frame
+def main():
+    connection = socket.socket(socket.AF_PACKET, socket.SOCK_RAW, socket.ntohs(3))
+    while True:
 
+# unpacking ethernet frame
 
 def ethernet_unpack(raw_data):
     dest_address, src_address, proto = struct.unpack(
@@ -13,6 +16,6 @@ def ethernet_unpack(raw_data):
 
 
 def get_mac(addr_bytes):
-    addr_str = map('{:02x}'.format(), addr_bytes)
+    addr_str = map('{:02x}'.format, addr_bytes)
     formatted_mac = ':'.join(addr_str).upper()
     return formatted_mac
