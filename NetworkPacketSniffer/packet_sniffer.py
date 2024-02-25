@@ -77,7 +77,11 @@ def tcp_segmet(data):
     flag_fin =  offset_reserved_flags & 1
     return src_port, dest_port, sequence, acknowledgement, flag_urg, flag_psh, flag_rst, flag_syn, flag_fin, data[offset:]
     
-
+# unpack udp_segment
+def udp_segment(data):
+    src_port, dest_port, size = struct.unpack('! H H 2x H ', data[:8])
+    return src_port, dest_port, size, data[8:]
+    
 
 
 
