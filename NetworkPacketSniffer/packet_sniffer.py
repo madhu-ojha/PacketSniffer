@@ -37,6 +37,13 @@ def main():
                 print('Data:')
                 print(format_multi_line('\t\t\t', data))
 
+            # UDP
+            elif protocol == 17:
+                src_port, dest_port, length, data = udp_segment(data)
+                print('\n UDP Segment: ')
+                print('Source Port: {}, Destination Port: {}, Length: {}'.format(
+                    src_port, dest_port, length))
+
 
 # unpacking ethernet frame
 
