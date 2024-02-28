@@ -40,8 +40,8 @@ def main():
             # UDP
             elif protocol == 17:
                 src_port, dest_port, length, data = udp_segment(data)
-                print('\n UDP Segment: ')
-                print('Source Port: {}, Destination Port: {}, Length: {}'.format(
+                print('\t UDP Segment: ')
+                print('\t\t\t Source Port: {}, Destination Port: {}, Length: {}'.format(
                     src_port, dest_port, length))
 
 
